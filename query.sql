@@ -1,0 +1,61 @@
+-- -- CREATE TABLE admin_table(
+-- --     admin_id int PRIMARY KEY AUTO_INCREMENT,
+-- --     admin_email_address char(30),
+-- --     admin_password char(60),
+-- --     admin_vertification_code char(60),
+-- --     admin_type enum('master', 'sub_master'),
+-- --     admin_created_on datetime,
+-- --     email_vertified enum('yes', 'no') DEFAULT 'yes'
+-- -- );
+-- -- INSERT INTO admin_table(
+-- --         admin_email_address,
+-- --         admin_password,
+-- --         admin_vertification_code,
+-- --         admin_type,
+-- --         admin_created_on,
+-- --         email_vertified
+-- --     )
+-- -- VALUES (
+-- --         "allmate@gmail.com",
+-- --         "",
+-- --         "",
+-- --         "sub_master",
+-- --         NOW(),
+-- --         "yes"
+-- --     );
+-- use online_examination;
+-- DROP TABLE IF EXISTS online_exam_table;
+-- CREATE TABLE online_exam_table (
+--     online_exam_id INT PRIMARY KEY AUTO_INCREMENT,
+--     admin_id INT,
+--     online_exam_title char(250),
+--     online_exam_datetime datetime,
+--     online_exam_duration char(30),
+--     total_question INT,
+--     marks_per_right_answer char(30),
+--     marks_per_wrong_answer char(30),
+--     online_exam_created_on datetime,
+--     online_exam_status ENUM('pending', 'created', 'started', 'completed'),
+--     online_exam_code char(100),
+--     CONSTRAINT admin_id_unique UNIQUE(admin_id)
+-- );
+-- SELECT *
+-- FROM online_exam_table
+-- ORDER BY online_exam_id ASC;
+
+-- INSERT INTO online_exam_table
+--   (admin_id, online_exam_title, online_exam_datetime, online_exam_duration, total_question, marks_per_right_answer, marks_per_wrong_answer, online_exam_created_on, online_exam_status, online_exam_code)
+-- VALUES (
+--         1,
+--         'title',
+--         now(),
+--         "5",
+--         10,
+--         1,
+--         0,
+--         now(),
+--         'pending',
+--         '#fff'
+--     );
+
+
